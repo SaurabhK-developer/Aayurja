@@ -1,0 +1,51 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    <Files .env>
+    order allow,deny
+    Deny from all
+    </Files>
+    
+    RewriteEngine On
+    php_value max_execution_time 300
+    <IfModule mod_headers.c>
+        Header set X-XSS-Protection "1; mode=block"
+    	Header set X-Frame-Options "SAMEORIGIN"
+    	Header set X-Content-Type-Options "nosniff"
+    	Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+    	#Header set Content-Security-Policy "default-src 'self' fonts.googleapis ;"
+    	Header set Referrer-Policy "same-origin"
+    	Header set Feature-Policy "geolocation 'self'; vibrate 'none'"
+    </IfModule>
+
+ 
+
+
+    
+    RewriteEngine on
+    
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+	
+
+
+</IfModule>
+
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>

@@ -1,0 +1,81 @@
+{
+    "fontawesome": {
+        "normal": "fontawesome_normal_7ea195556637d817f455524c7885b526"
+    },
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_46b77e52f90f4a4bb6b06f59df9495c3"
+    },
+    "font awesome 5 free": {
+        "normal": "font_awesome_5_free_normal_1caf3cfb62385c212e463e185e07e09e",
+        "900": "\/var\/www\/html\/youwecan\/storage\/fonts\/font_awesome_5_free_900_26af9e51d7f6a3784d3495b1580a4b86"
+    },
+    "lato": {
+        "300": "lato_300_fb7d08405015581946b939a57034dcbc",
+        "normal": "lato_normal_7e89c2707278385e59b149142f779d6e",
+        "bold": "lato_bold_a37fb3b180e8dc9f478950eed9f4a19a",
+        "900": "lato_900_d0ec20a586fc4eabf7504efbeb83dff7"
+    },
+    "montserrat": {
+        "300_italic": "montserrat_300_italic_fb5a415793464dedbdefb17fc42d396a",
+        "200": "montserrat_200_d36113c7a8643243e5b2a0e2685ba6ee",
+        "300": "montserrat_300_39b1972e72c43f1f0e368a33cc82c0ce",
+        "normal": "montserrat_normal_b74b751c20b429298921949795391ef1",
+        "500": "montserrat_500_a34ab50d0b60a015b62e11133b0bf05b",
+        "600": "montserrat_600_54346339d706ca965bcbed499d2795db",
+        "bold": "montserrat_bold_4b7576218464d90344a2d2769cab2f75"
+    },
+    "roboto": {
+        "100": "roboto_100_1c4e32da7e6c8539dd3a51af38f413be",
+        "300": "roboto_300_32acfcb296f555e063ebba2be7db9e2f",
+        "normal": "roboto_normal_7bc701b343c10631f60048716b96e4f7"
+    },
+    "open sans": {
+        "300": "\/var\/www\/html\/just_go\/storage\/fonts\/open_sans_300_1d6849e351b30d7d7fb264a1878f4b3a",
+        "normal": "\/var\/www\/html\/just_go\/storage\/fonts\/open_sans_normal_e3f9da90edb379e243cceabb2fdb3f0a",
+        "500": "\/var\/www\/html\/just_go\/storage\/fonts\/open_sans_500_206276ec5153db0ed3baebdafc92e714",
+        "600": "\/var\/www\/html\/just_go\/storage\/fonts\/open_sans_600_2a60ebfba7bda514848a0bbbd15b621a",
+        "bold": "\/var\/www\/html\/just_go\/storage\/fonts\/open_sans_bold_074d893389082c36506eb383f9ca70e7",
+        "800": "open_sans_800_ff3fba9a9fc2a96112903cfc411756fd"
+    },
+    "glyphicons halflings": {
+        "normal": "glyphicons_halflings_normal_91a063d0f3772b152f606edc0383c99d"
+    },
+    "kanit": {
+        "100": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_100_5ab7f8dc1aa0629da95bdcff6d527ebf",
+        "200": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_200_c4f083a247b93367a0eb5f049d27112e",
+        "300": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_300_cb6932b50fb17811d950ddc77067a923",
+        "normal": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_normal_aee697df6c4679691ba1e96fd8c76167",
+        "500": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_500_97dde838703f25778d8bb95df5e2e9c7",
+        "600": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_600_44156446a4d3bc104f446c8108c1e768",
+        "bold": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_bold_1f4c0b52b1efe39e45edc062758f6339",
+        "800": "\/var\/www\/html\/youwecan\/storage\/fonts\/kanit_800_aeb10499d20c2b3a5c41b0ddc0e1ad21",
+        "900": "kanit_900_dfb0aea198b3ae4ac912af17191f1c76"
+    },
+    "pt serif": {
+        "italic": "\/var\/www\/html\/youwecan\/storage\/fonts\/pt_serif_italic_9850817a9f144330069fd71ead518b94",
+        "bold_italic": "\/var\/www\/html\/youwecan\/storage\/fonts\/pt_serif_bold_italic_4b6713dc94d565a7037baac606046894",
+        "normal": "\/var\/www\/html\/youwecan\/storage\/fonts\/pt_serif_normal_800f00a5f7dfec72575b07dcea7cef7d",
+        "bold": "pt_serif_bold_39bd1bf90def61cab6c4d094c8841d35"
+    },
+    "inter": {
+        "normal": "\/var\/www\/html\/giftopiaonline\/storage\/fonts\/inter_normal_4f95092608a03c140dccd33606c19f31",
+        "500": "\/var\/www\/html\/giftopiaonline\/storage\/fonts\/inter_500_3f435dc727a887d3a9c0ddd0afecf691",
+        "600": "\/var\/www\/html\/giftopiaonline\/storage\/fonts\/inter_600_9bfe13c942a9c8fb0ff92d25ab822ed4",
+        "900": "inter_900_142a98341c04a09a1eaffe623d19a992"
+    },
+    "plus jakarta sans": {
+        "200": "\/var\/www\/html\/aayurja\/storage\/fonts\/plus_jakarta_sans_200_64bc051657b3630af2881516dd02c37a",
+        "300": "\/var\/www\/html\/aayurja\/storage\/fonts\/plus_jakarta_sans_300_a5b06fab67f126744f464d3f6c4b7ec5",
+        "normal": "\/var\/www\/html\/aayurja\/storage\/fonts\/plus_jakarta_sans_normal_a61e26c3bf7a8dd6b37143de092efef8",
+        "500": "\/var\/www\/html\/aayurja\/storage\/fonts\/plus_jakarta_sans_500_d11c7c2b6ee08331c5d1a7984d0927bb",
+        "600": "\/var\/www\/html\/aayurja\/storage\/fonts\/plus_jakarta_sans_600_9f311d0ee9acf3e7bf95a4348b029c33",
+        "bold": "\/var\/www\/html\/aayurja\/storage\/fonts\/plus_jakarta_sans_bold_78a6995f90ba527650463aab62b3a3b3",
+        "800": "plus_jakarta_sans_800_2eb7c869ec83f0492f5164518a4ccaff"
+    },
+    "el messiri": {
+        "normal": "\/var\/www\/html\/aayurja\/storage\/fonts\/el_messiri_normal_0d392b5abb6cead65c5c742ef72829fe",
+        "500": "\/var\/www\/html\/aayurja\/storage\/fonts\/el_messiri_500_7b4e1a4015407526efaa50c5115aa417",
+        "600": "\/var\/www\/html\/aayurja\/storage\/fonts\/el_messiri_600_b7d562a9af92014d50730392224223ee",
+        "bold": "el_messiri_bold_07c8eaecf3d9bcdd34a5bd9c36d9403d"
+    }
+}

@@ -1,0 +1,3 @@
+ {!!$rors->content!!} 
+
+

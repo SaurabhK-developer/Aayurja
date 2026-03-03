@@ -1,0 +1,2 @@
+name,category_id,subcategory_id,offer_id,brand_id,short_description,description,feature,price,selling_price,units,product_type,image1,image2,image3,image4,sku,color,footprint,weight,self_line
+Jeanse 1,7,759,0,11,short content,NULL,NULL,500,300,8,2,jeanse_1.jpg,jeanse_2.jpg,jeanse_3.jpg,jeanse_4.jpg,VAABAN200,green,hi,500,NULL
