@@ -13,7 +13,7 @@ A Laravel + MySQL + Blade marketplace for buying and selling locally. The UI use
 
 ## Project notes
 
-This repository already contains an older Laravel storefront. Marketplace code is isolated in `App\Marketplace` and uses `marketplace_categories` and `marketplace_listings` tables so it does not collide with existing storefront tables. The marketplace is served at `/`; the old storefront homepage remains available at `/storefront`.
+The application is a standalone marketplace. Listings and categories use the `marketplace_listings` and `marketplace_categories` tables.
 
 ## Setup
 
@@ -23,16 +23,15 @@ This repository already contains an older Laravel storefront. Marketplace code i
    composer install
    ```
 
-2. Configure `.env` with the MySQL database connection you intend to use. Ensure the existing Laravel `users` table is present before running the listings migration. On a clean database, create it with `php artisan migrate --path=database/migrations/2014_10_12_000000_create_users_table.php`. Do not run `migrate:fresh` against a database containing existing application data.
+2. Copy `.env.example` to `.env` if needed and configure your local MySQL credentials. The app uses a separate `honeybee_marketplace` database. Existing `.env` values and database data are not removed by this cleanup.
 
-3. Run the two marketplace migrations (or run `php artisan migrate` when setting up a clean database and all existing migrations are intended):
+3. Run the migrations:
 
    ```sh
-   php artisan migrate --path=database/migrations/2026_11_23_000001_create_marketplace_categories_table.php
-   php artisan migrate --path=database/migrations/2026_11_23_000002_create_marketplace_listings_table.php
+   php artisan migrate
    ```
 
-4. Add the starter categories:
+4. Add starter categories:
 
    ```sh
    php artisan db:seed --class=MarketplaceCategorySeeder
@@ -58,4 +57,4 @@ Open `http://127.0.0.1:8000`. Create an account, post a listing, then try the ci
 | `/marketplace/listings/create` | Post an ad (signed in) |
 | `/marketplace/my-listings` | Manage your ads (signed in) |
 
-Category and listing schema changes are in `database/migrations`; the category seed data is in `database/seeds/MarketplaceCategorySeeder.php`.
+Category and listing schema changes are in `database/migrations`; category seed data is in `database/seeds/MarketplaceCategorySeeder.php`.

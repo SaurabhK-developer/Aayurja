@@ -60,7 +60,7 @@ class MarketplaceController extends Controller
 
         $categories = Category::whereNull('parent_id')->with('children')->orderBy('name')->get();
 
-        return view('marketplace.index', compact('listings', 'categories', 'filters'));
+        return view('marketplace.index', compact('listings', 'categories'));
     }
 
     public function show($id)
