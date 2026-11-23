@@ -27,6 +27,10 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('*', function ($view) {
+            if (strpos($view->getName(), 'marketplace.') === 0) {
+                return;
+            }
+
             $productcategry_list = Product_category::withCount('products')->get();
             $concerns = Concern::get();
     

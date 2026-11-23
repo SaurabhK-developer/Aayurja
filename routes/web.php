@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CartController;
 namespace App\Http\Controllers\WishlistController;
 // namespace App\Http\Controllers\Admin\RatingsControlle;
 use App\Http\Controllers\Admin\RatingsController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\PayuController;
 use Route;
 use Auth;
@@ -93,7 +94,7 @@ Route::post('/move-to-wishlist', 'CartController@moveToWishlist')->name('moveToW
 Route::get('/wishlist', 'WebsiteController@wishlist');
 Route::get('/password-reset', 'WebsiteController@password_reset');
 Route::redirect('/admin/login', '/admin/home');
-Route::get('/', 'WebsiteController@index');
+Route::get('/storefront', 'WebsiteController@index');
 
 Route::get('/website-login', 'WebsiteController@signIn');
 Route::get('/signup', 'WebsiteController@signup');
@@ -740,3 +741,5 @@ Route::resource('contact', 'Admin\ContactController');
 
 // Route::get('{param1}', 'WebsiteController@product_listing_test');
 // Route::get('{param1}/{param2}', 'WebsiteController@product_listing_tests');
+
+require __DIR__.'/marketplace.php';

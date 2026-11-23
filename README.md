@@ -1,45 +1,61 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Honeybee Marketplace
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+A Laravel + MySQL + Blade marketplace for buying and selling locally. The UI uses Bootstrap 5 from its CDN; no frontend build is required.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+## Features
 
----
+- Browse active product and service listings with keyword, city, category, type, and price filters.
+- Register, log in, and log out using the existing Laravel users table.
+- Create listings with one optional image, edit or mark them sold, and delete your own listings.
+- View listing details and contact a seller by email.
+- Parent categories and subcategories populated by a seeder.
+- Ownership checks, CSRF-protected forms, validation, password hashing, and pagination.
 
-## Edit a file
+## Project notes
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+This repository already contains an older Laravel storefront. Marketplace code is isolated in `App\Marketplace` and uses `marketplace_categories` and `marketplace_listings` tables so it does not collide with existing storefront tables. The marketplace is served at `/`; the old storefront homepage remains available at `/storefront`.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+## Setup
 
----
+1. Install the PHP dependencies from the repository root:
 
-## Create a file
+   ```sh
+   composer install
+   ```
 
-Next, you’ll add a new file to this repository.
+2. Configure `.env` with the MySQL database connection you intend to use. Ensure the existing Laravel `users` table is present before running the listings migration. On a clean database, create it with `php artisan migrate --path=database/migrations/2014_10_12_000000_create_users_table.php`. Do not run `migrate:fresh` against a database containing existing application data.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+3. Run the two marketplace migrations (or run `php artisan migrate` when setting up a clean database and all existing migrations are intended):
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+   ```sh
+   php artisan migrate --path=database/migrations/2026_11_23_000001_create_marketplace_categories_table.php
+   php artisan migrate --path=database/migrations/2026_11_23_000002_create_marketplace_listings_table.php
+   ```
 
----
+4. Add the starter categories:
 
-## Clone a repository
+   ```sh
+   php artisan db:seed --class=MarketplaceCategorySeeder
+   ```
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+5. Enable public listing image URLs and start the application:
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+   ```sh
+   php artisan storage:link
+   php artisan serve
+   ```
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Open `http://127.0.0.1:8000`. Create an account, post a listing, then try the city and category filters.
+
+## Main routes
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Browse/search listings |
+| `/marketplace/listing/{id}` | Listing details |
+| `/marketplace/register` | Create an account |
+| `/marketplace/login` | Sign in |
+| `/marketplace/listings/create` | Post an ad (signed in) |
+| `/marketplace/my-listings` | Manage your ads (signed in) |
+
+Category and listing schema changes are in `database/migrations`; the category seed data is in `database/seeds/MarketplaceCategorySeeder.php`.

@@ -1,8 +1,10 @@
 <?php
 namespace App;
 
+use App\Marketplace\Listing as MarketplaceListing;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Permission\Traits\HasRoles;
 use Hash;
 
@@ -37,6 +39,11 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsToMany(Role::class, 'role_user');
+    }
+
+    public function marketplaceListings(): HasMany
+    {
+        return $this->hasMany(MarketplaceListing::class, 'user_id');
     }
     
     

@@ -25,7 +25,9 @@ class AppServiceProvider extends ServiceProvider
         // CART PRODUCTS COUNT START
         view()->composer('*', function($view)
         {
-          
+            if (strpos($view->getName(), 'marketplace.') === 0) {
+                return;
+            }
 
             if(Auth::check())
             {
@@ -143,6 +145,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function($view)
         { 
+            if (strpos($view->getName(), 'marketplace.') === 0) {
+                return;
+            }
+
             $wish=[];
             if(Auth::check())
             {
